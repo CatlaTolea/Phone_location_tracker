@@ -1,16 +1,11 @@
-# This is a sample Python script.
+import phonenumbers
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from phonenumbers import carrier
+from phonenumbers import geocoder
 
+type_number = input("Enter the phone number: ")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+number = phonenumbers.parse(type_number)
+print(geocoder.description_for_number(number, 'en'))
+print(carrier.name_for_number(number, 'en'))
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
